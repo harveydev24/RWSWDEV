@@ -8,7 +8,7 @@ public class BankStatementCSVParser implements BankStatementParser{
     public static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     @Override
-    public BankTransaction parseFromCSV(final String line) {
+    public BankTransaction parseFrom(final String line) {
         final String[] columns = line.split(",");
 
         final LocalDate date = LocalDate.parse(columns[0], DATE_PATTERN);
@@ -23,7 +23,7 @@ public class BankStatementCSVParser implements BankStatementParser{
         final List<BankTransaction> bankTransactions = new ArrayList<>();
 
         for (String line : lines) {
-            bankTransactions.add(parseFromCSV(line));
+            bankTransactions.add(parseFrom(line));
         }
         return bankTransactions;
     }

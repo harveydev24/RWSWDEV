@@ -1,6 +1,6 @@
 import java.util.List;
 
 public interface BankStatementParser {
-    BankTransaction parseFromCSV(final String line);
+    BankTransaction parseFrom(final String line);
     List<BankTransaction> parseLinesFromCSV(final List<String> lines);
 }
