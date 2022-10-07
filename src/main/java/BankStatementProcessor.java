@@ -23,7 +23,7 @@ public class BankStatementProcessor {
     public double calculateTotalInMonth(Month month) {
         double total = 0d;
 
-        for(BankTransaction bankTransaction : bankTransactions) {
+        for (BankTransaction bankTransaction : bankTransactions) {
             if(bankTransaction.getDate().getMonth() == month) {
                 total += bankTransaction.getAmount();
             }
@@ -34,12 +34,24 @@ public class BankStatementProcessor {
     public double calculateTotalForCategory(String category) {
         double total = 0d;
 
-        for(BankTransaction bankTransaction : bankTransactions) {
+        for (BankTransaction bankTransaction : bankTransactions) {
             if(bankTransaction.getDescription().equals(category)) {
                 total += bankTransaction.getAmount();
             }
         }
 
         return total;
+    }
+
+    public List<BankTransaction> findTransactions(BankTransactionFilter bankTransactionFilter) {
+        final List<BankTransaction> result = new ArrayList<>();
+
+        for (BankTransaction bankTransaction : bankTransactions) {
+            if(bankTransactionFilter.test(bankTransaction)) {
+                result.add(bankTransaction);
+            }
+        }
+
+        return result;
     }
 }

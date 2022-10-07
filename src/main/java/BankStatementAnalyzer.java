@@ -23,5 +23,8 @@ public class BankStatementAnalyzer {
         System.out.println(bankStatementProcessor.calculateTotalAmount());
         System.out.println(bankStatementProcessor.calculateTotalInMonth(Month.JANUARY));
         System.out.println(bankStatementProcessor.calculateTotalForCategory("Salary"));
+        System.out.println(bankStatementProcessor.findTransactions(bankTransaction ->
+                bankTransaction.getDate().getMonth() == Month.FEBRUARY &&
+                bankTransaction.getAmount() >= 1_000));
     }
 }
