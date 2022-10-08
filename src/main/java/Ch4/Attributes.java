@@ -1,4 +1,4 @@
-package Document;
+package Ch4;
 
 public class Attributes {
     public static final String PATH = "path";

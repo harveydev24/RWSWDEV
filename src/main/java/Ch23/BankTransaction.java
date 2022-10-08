@@ -1,4 +1,4 @@
-package Bank;
+package Ch23;
 
 import java.time.LocalDate;
 import java.util.Objects;

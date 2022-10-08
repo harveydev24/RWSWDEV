@@ -1,2 +1,6 @@
-package Ch5;public interface Action {
+package Ch5;
+
+@FunctionalInterface
+public interface Action {
+    void perform();
 }

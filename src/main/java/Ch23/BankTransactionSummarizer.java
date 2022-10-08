@@ -1,4 +1,4 @@
-package Bank;
+package Ch23;
 
 @FunctionalInterface
 public interface BankTransactionSummarizer {

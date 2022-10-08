@@ -1,4 +1,4 @@
-package Bank;
+package Ch23;
 
 public class SummaryStatistics {
 
