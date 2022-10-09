@@ -1,4 +1,4 @@
-package Ch23;
+package chapter2and3;
 
 @FunctionalInterface
 public interface BankTransactionFilter {

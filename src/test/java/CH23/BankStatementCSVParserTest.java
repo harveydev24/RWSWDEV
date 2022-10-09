@@ -1,8 +1,8 @@
 package CH23;
 
-import Ch23.BankStatementCSVParser;
-import Ch23.BankStatementParser;
-import Ch23.BankTransaction;
+import chapter2and3.BankStatementCSVParser;
+import chapter2and3.BankStatementParser;
+import chapter2and3.BankTransaction;
 import org.junit.Assert;
 import org.junit.Test;
 

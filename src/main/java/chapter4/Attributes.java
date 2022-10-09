@@ -1,4 +1,4 @@
-package Ch4;
+package chapter4;
 
 public class Attributes {
     public static final String PATH = "path";

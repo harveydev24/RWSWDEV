@@ -1,6 +1,6 @@
-package Ch5;
+package chapter5;
 
 @FunctionalInterface
-public interface Rule {
+public interface Action {
     void perform(Facts facts);
 }

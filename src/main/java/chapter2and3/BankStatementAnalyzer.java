@@ -1,4 +1,4 @@
-package Ch23;
+package chapter2and3;
 
 import java.io.IOException;
 import java.nio.file.Files;

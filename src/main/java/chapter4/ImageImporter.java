@@ -1,4 +1,4 @@
-package Ch4;
+package chapter4;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static Ch4.Attributes.*;
+import static chapter4.Attributes.*;
 
 public class ImageImporter implements Importer
 {

@@ -1,4 +1,4 @@
-package Ch5;
+package chapter5;
 
 public class RuleBuilder {
 
