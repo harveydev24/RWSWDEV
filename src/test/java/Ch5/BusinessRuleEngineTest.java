@@ -10,30 +10,46 @@ public class BusinessRuleEngineTest {
 
     @Test
     public void shouldHaveNoRulesInitially() {
-        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+        final Facts mockFacts = mock(Facts.class);
+        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
 
         assertEquals(0, businessRuleEngine.count());
     }
 
     @Test
     public void shouldAddTwoActions() {
-        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+        final Facts mockFacts = mock(Facts.class);
+        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+        final Action mockAction = mock(Action.class);
 
-        businessRuleEngine.addAction(() -> {});
-        businessRuleEngine.addAction(() -> {});
+
+        businessRuleEngine.addAction(mockAction);
+        businessRuleEngine.addAction(mockAction);
 
         assertEquals(2, businessRuleEngine.count());
     }
 
     @Test
     public void shouldExecuteOneAction() {
-        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+        final Facts mockFacts = mock(Facts.class);
+        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
         final Action mockAction = mock(Action.class);
 
         businessRuleEngine.addAction(mockAction);
         businessRuleEngine.run();
 
-        verify(mockAction).perform();
+        verify(mockAction).perform(mockFacts);
     }
 
+    @Test
+    public void shouldPerformAnActionWithFacts() {
+        final Action mockAction = mock(Action.class);
+        final Facts mockFacts = mock(Facts.class);
+        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+
+        businessRuleEngine.addAction(mockAction);
+        businessRuleEngine.run();
+
+        verify(mockAction).perform(mockFacts);
+    }
 }
